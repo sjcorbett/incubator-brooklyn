@@ -19,8 +19,9 @@
 define([
     "brooklyn", "underscore", "jquery", "backbone",
     "model/application", "model/app-tree", "model/location", "model/ha",
-    "view/home", "view/application-explorer", "view/catalog", "view/apidoc", "view/script-groovy",
-    "text!tpl/help/page.html","text!tpl/labs/page.html", "text!tpl/home/server-not-ha-master.html"
+    "view/home", "view/application-explorer", "view/catalog", "view/apidoc", "view/script-groovy", 
+    "text!tpl/help/page.html","text!tpl/labs/page.html", "text!tpl/home/server-not-ha-master.html",
+    "jquery-migrate"
 ], function (Brooklyn, _, $, Backbone,
         Application, AppTree, Location, ha,
         HomeView, ExplorerView, CatalogView, ApidocView, ScriptGroovyView,
@@ -153,16 +154,17 @@ define([
             }})
         },
         applicationsPage:function (app, trail, tab) {
+            console.log("showing: app ", app, "/ trail ", trail, "/ tab ", tab);
             if (trail === undefined) trail = app
             var that = this
-            this.appTree.fetch({success:function () {
+            this.appTree.fetch().done(function () {
                 var appExplorer = new ExplorerView({
-                    collection:that.appTree,
-                    appRouter:that
+                    collection: that.appTree,
+                    appRouter: that
                 })
                 that.showView("#application-content", appExplorer)
                 if (trail !== undefined) appExplorer.show(trail)
-            }})
+            });
         },
         catalogPage: function (catalogItemKind, id) {
             var catalogResource = new CatalogView({

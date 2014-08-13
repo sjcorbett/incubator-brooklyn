@@ -285,6 +285,11 @@ define([
             this.$(".accordion-body")
                 .empty()
                 .append(elements.join(''));
+            // Rehighlight active model
+            if (this.activeCid && activeDetails === this.name) {
+                $(".accordion-nav-row").removeClass("active");
+                this.setActiveItem(this.$("[data-cid='"+this.activeCid+"']"));
+            }
         },
 
         refresh: function() {

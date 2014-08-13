@@ -27,6 +27,7 @@ require.config({
     baseUrl:"assets/js",
     paths:{
         "jquery":"libs/jquery",
+        "jquery-migrate":"libs/jquery-migrate",
         "underscore":"libs/underscore",
         "backbone":"libs/backbone",
         "bootstrap":"libs/bootstrap",
@@ -68,7 +69,7 @@ require.config({
         "jquery-form": { deps: [ "jquery" ] },
         "jquery-slideto": { deps: [ "jquery" ] },
         "jquery-wiggle": { deps: [ "jquery" ] },
-        "jquery-ba-bbq": { deps: [ "jquery" ] },
+        "jquery-ba-bbq": { deps: [ "jquery", "jquery-migrate" ] },
         "handlebars": { deps: [ "jquery" ] },
         "bootstrap": { deps: [ "jquery" ] /* http://stackoverflow.com/questions/9227406/bootstrap-typeerror-undefined-is-not-a-function-has-no-method-tab-when-us */ }
     }

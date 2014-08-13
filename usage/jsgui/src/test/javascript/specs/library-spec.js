@@ -29,14 +29,16 @@ define([
     describe('Test the libraries', function () {
 
         describe('underscore.js', function () {
-            it('must be version 1.4.4', function () {
-                expect(_.VERSION).toEqual('1.4.4')
+            var version = '1.4.4';
+            it('must be version ' + version, function () {
+                expect(_.VERSION).toEqual(version)
             })
         })
 
         describe('jquery', function () {
-            it('must be version 1.7.2', function () {
-                expect(jQuery.fn.jquery).toEqual('1.7.2')
+            var version = '1.9.1';
+            it('must be version ' + version, function () {
+                expect(jQuery.fn.jquery).toEqual(version);
                 expect(jQuery).toEqual($);
             })
         })
@@ -48,8 +50,9 @@ define([
         })
 
         describe('backbone', function () {
-            it('must be version 1.0.0', function () {
-                expect(Backbone.VERSION).toEqual('1.0.0')
+            var version = '1.0.0';
+            it('must be version ' + version, function () {
+                expect(Backbone.VERSION).toEqual(version)
             })
         })
     })

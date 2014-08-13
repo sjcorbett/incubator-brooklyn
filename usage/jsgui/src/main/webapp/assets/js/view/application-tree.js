@@ -329,17 +329,16 @@ define([
                 return that.displayEntityNotFound(id);
             };
 
-            if (appName === undefined) {
+            if (!appName) {
                 appName = $("#span-"+id).data("app-id")
             }
-            if (appName === undefined) {
+            if (!appName) {
                 if (!afterLoad) {
                     // try a reload if given an ID we don't recognise
                     this.collection.includeEntities([id]);
-                    this.collection.fetch({
-                        success: function() { _.defer(function() { that.displayEntityId(id, appName, true); }); },
-                        error: function() { _.defer(function() { that.displayEntityId(id, appName, true); }); }
-                    });
+                    this.collection.fetch()
+                        .done(function() { _.defer(function() { that.displayEntityId(id, appName, true); })})
+                        .fail(function() { _.defer(function() { that.displayEntityId(id, appName, true); })});
                     ViewUtils.fadeToIndicateInitialLoad($("div#details"))
                     return;
                 } else {

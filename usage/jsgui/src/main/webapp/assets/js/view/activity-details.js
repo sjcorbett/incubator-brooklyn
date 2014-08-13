@@ -84,7 +84,7 @@ define([
             else if (this.options.tabView)
                 this.task = this.options.tabView.collection.get(this.taskId);
             if (!this.taskLink && this.task) this.taskLink = this.task.get('links').self;
-            if (!this.taskLink && this.taskId) this.taskLink = "v1/activities/"+this.taskId;;
+            if (!this.taskLink && this.taskId) this.taskLink = "/v1/activities/"+this.taskId;;
             
             this.tabView = this.options.tabView || null;
             

@@ -22,9 +22,11 @@ define([
     
     "jquery-slideto",
     "jquery-wiggle",
+    // jquery-ba-bbq required by swagger-ui.js.
     "jquery-ba-bbq",
     "handlebars",
-    "bootstrap"
+    "bootstrap",
+    "jquery-migrate"
 ], function (_, $, Backbone, SwaggerHtml) {
 
     var ApidocView = Backbone.View.extend({

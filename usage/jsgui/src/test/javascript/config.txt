@@ -4,6 +4,7 @@
     /* Libraries */
     paths:{
         "jquery":"js/libs/jquery",
+        "jquery-migrate":"js/libs/jquery-migrate",
         "underscore":"js/libs/underscore",
         "backbone":"js/libs/backbone",
         "bootstrap":"js/libs/bootstrap",
@@ -46,7 +47,7 @@
         "jquery-form": { deps: [ "jquery" ] },
         "jquery-slideto": { deps: [ "jquery" ] },
         "jquery-wiggle": { deps: [ "jquery" ] },
-        "jquery-ba-bbq": { deps: [ "jquery" ] },
+        "jquery-ba-bbq": { deps: [ "jquery", "jquery-migrate" ] },
         "handlebars": { deps: [ "jquery" ] },
         "bootstrap": { deps: [ "jquery" ] /* http://stackoverflow.com/questions/9227406/bootstrap-typeerror-undefined-is-not-a-function-has-no-method-tab-when-us */ }
     },

@@ -23,7 +23,6 @@ define([
     
     "jquery-slideto",
     "jquery-wiggle",
-    "jquery-ba-bbq",
     "handlebars",
     "bootstrap"
 ], function (_, $, Backbone, ViewUtils, GroovyHtml) {
